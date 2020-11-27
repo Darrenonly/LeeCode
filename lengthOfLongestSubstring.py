@@ -6,24 +6,19 @@ class Solution:
         input type s: str
         output type : int
         """
-        st = {}
-        i, ans = 0, 0
-        for j in range(len(s)):
-            if s[j] in st:
-                i = max(st[s[j]], i)
-            ans = max(ans, j - i + 1)
-            st[s[j]] = j + 1
-            print(st)
+        der = {}
+        index_start, ans = 0, 0
+        for index_end in range(len(s)):
+            if s[index_end] in der:
+                index_start = max(der[s[index_end]], index_start)
+            ans = max(ans, index_end - index_start + 1)
+            der[s[index_end]] = index_end + 1
         return ans
 
 
 if __name__ == "__main__":
-    test1 = 'abcabcdef'
-    test2 = "pwwkew"
-    test3 = " "
-    test4 = "bbbbbbb"
-    test5 = "dvdg"
-
+    test_str = ["abcabcdef", "pwwkew", " ", "bbbbbbb", "dvdg"]
     sol = Solution()
-    length = sol.lengthOfLongestSubstring(test2)
-    print(length)
+    for s in test_str:
+        length = sol.lengthOfLongestSubstring(s)
+        print(length)
