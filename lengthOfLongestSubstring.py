@@ -23,10 +23,6 @@ if __name__ == "__main__":
     test3 = " "
     test4 = "bbbbbbb"
     test5 = "dvdg"
-    """
-    commit test
-    
-    """
 
     sol = Solution()
     length = sol.lengthOfLongestSubstring(test2)
